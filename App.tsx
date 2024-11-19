@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
-import { ActivityIndicator, Alert, Button, FlatList, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, Alert, Button, FlatList, Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
 
@@ -41,13 +41,20 @@ export default function App() {
           />
         ) */
       }
-      <ScrollView style={styles.scrollView}>
+      {/* <ScrollView style={styles.scrollView}>
 
         <Text style={styles.texto} >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
         </Text>
         <Text style={styles.texto} >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
         </Text>
-      </ScrollView>
+      </ScrollView> */}
+
+      <Image
+        style={styles.tinyLogo}
+        source={{
+          uri: 'https://i.blogs.es/36bebd/output/650_1200.jpeg',
+        }}
+      />
 
       <StatusBar style="auto" />
     </View>
@@ -68,5 +75,9 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     backgroundColor: 'pink',
+  },
+  tinyLogo: {
+    width: 300,
+    height: 500,
   },
 });
