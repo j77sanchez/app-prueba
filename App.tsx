@@ -1,11 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
-import { ActivityIndicator, Alert, Button, FlatList, Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, Alert, Button, FlatList, Image, ImageBackground, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
 
   const [isLoading, setLoading] = useState(true)
   const [data, setData] = useState([])
+
+  const imagen = { uri: 'https://cdn.pixabay.com/photo/2023/03/14/04/44/ai-generated-7851451_640.jpg' }
+
 
   const getMovies = async () => {
     try {
@@ -49,13 +52,15 @@ export default function App() {
         </Text>
       </ScrollView> */}
 
-      <Image
+      {/* <Image
         style={styles.tinyLogo}
         source={{
           uri: 'https://i.blogs.es/36bebd/output/650_1200.jpeg',
         }}
-      />
-
+      /> */}
+      <ImageBackground source={imagen} resizeMode={'cover'} style={styles.image}>
+        <Text style={styles.texto}>Hola </Text>
+      </ImageBackground>
       <StatusBar style="auto" />
     </View>
   );
@@ -64,9 +69,13 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // backgroundColor: '#fff',
+    // alignItems: 'center',
+    // justifyContent: 'center',
+  },
+  image:{
+    flex:1,
+    justifyContent :'center'
   },
   texto: {
     color: 'blue',
